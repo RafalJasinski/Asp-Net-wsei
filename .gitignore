@@ -1,0 +1,5 @@
+obj
+CourseSchool/bin/*
+CourseSchool/obj/*
+.vs
+.git
