@@ -1,0 +1,48 @@
+﻿@model HomeSchool.Models.Course
+
+@{
+    ViewBag.Title = "Usuń zajęcie";
+}
+
+<h2 style="color: white;">Usuwanie</h2>
+
+<h3 style="color: white;">Czy na pewno chcesz usunąć to zajęcie? Tej operacji nie można cofnąć.</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="color: white;">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credits)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-danger" /> |
+            @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

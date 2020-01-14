@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HomeSchool.ViewModels.EnrollmentDateGroup>
+
+@{
+    ViewBag.Title = "Statystyka bazy danych";
+}
+
+    <h2 style="color: white;">Statystyka bazy danych</h2>
+
+<table class="table table-dark table-striped table-bordered" style="width: 100%; color: white;">
+    <tr>
+        <th style="margin-right: 20%">
+            Data dołączenia
+        </th>
+        <th style="text-align:center">
+            Uczniowie
+        </th>
+        <th style="text-align:center">
+            Nauczyciele
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.EnrollmentDate)
+    </td>
+    <td style="text-align: center">
+        <p>@item.StudentCount</p>
+    </td>
+    <td style="text-align: center">
+        <p>@item.TeacherCount</p>
+    </td>
+</tr>
+    }
+</table>

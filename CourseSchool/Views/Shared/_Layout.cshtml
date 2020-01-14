@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HomeSchool System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="padding-top:0px; background-image: url('../../Content/university-school.jpg');
+">
+    <nav style="margin-bottom: 25px;" class="navbar navbar-expand-sm bg-light">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li style="        padding-left: 20px;
+        padding-right: 20px;
+">@Html.ActionLink("Strona główna", "Index", "Home")</li>
+<li style="padding-left: 20px; padding-right: 20px;">@Html.ActionLink("Uczniowie", "Index", "Student")</li>
+<li style="padding-left: 20px; padding-right: 20px;">@Html.ActionLink("Nauczyciele", "Index", "Teacher")</li>
+<li style="padding-left: 20px; padding-right: 20px;">@Html.ActionLink("Zajęcia", "Index", "Course")</li>
+<li style="padding-left: 20px; padding-right: 20px;">@Html.ActionLink("Statystyka studentów", "Statistics", "Home")</li>
+</ul>
+
+</nav>
+
+<div class="container" style="margin-top: 66px; margin-bottom: 66px;">
+    @RenderBody()
+    <div style="position: fixed; left: 0; bottom: 0; width: 100%; text-align: center; background-color: black; z-index: 999;">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - HomeSchool</p>
+        </footer>
+    </div>
+
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>
