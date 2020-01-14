@@ -3,3 +3,5 @@ CourseSchool/bin/*
 CourseSchool/obj/*
 .vs
 .git
+*.dll
+*.pdb
