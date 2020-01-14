@@ -1,0 +1,65 @@
+﻿@model HomeSchool.Models.Student
+
+@{
+    ViewBag.Title = "Szczegóły ucznia";
+}
+
+<h2 style="color: white;">Szczegóły wybranego ucznia</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="color: white;">
+        <dt>
+            @Html.LabelFor(model => model.LastName, "Nazwisko:", new { @style = "color: white;" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName, null, null, new { @style = "color: white;" })
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.FirstName, "Imię:", new { @style = "color: white;" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName, new { @style = "color: white;" })
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.EnrollmentDate, "Data dodania:", new { @style = "color: white;" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate, new { @style = "color: white;" })
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.Enrollments, "Zajęcia:", new { @style = "color: white;" })
+        </dt>
+        <dd>
+            <br />
+            <table class="table table-hover table-striped table-bordered">
+                <tr style="color: white;">
+                    <th>Nazwa przedmiotu</th>
+                    <th>Ocena</th>
+                </tr>
+                @foreach (var item in Model.Enrollments)
+                {
+                <tr>
+                    <td style="color: white;">
+                        @Html.DisplayFor(modelItem => item.Course.Title, "Zajęcia")
+                    </td>
+                    <td style="color: white;">
+                        @Html.DisplayFor(modelItem => item.Grade, "Ocena")
+                    </td>
+                </tr>
+                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID }, new { @class="btn btn-primary"}) |
+    @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-secondary" })
+</p>

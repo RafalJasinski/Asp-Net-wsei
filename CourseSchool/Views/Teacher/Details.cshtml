@@ -1,0 +1,49 @@
+﻿@model HomeSchool.Models.Teacher
+
+@{
+    ViewBag.Title = "Szczegóły nauczyciela";
+}
+
+<h2 style="color: white;">Szczegóły nauczyciela</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="color: white;">
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficeAssignment.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficeAssignment.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HireDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edycja", "Edit", new { id = Model.ID }, new { @class="btn btn-primary" }) |
+    @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-secondary" })
+</p>

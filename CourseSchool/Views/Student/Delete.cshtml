@@ -1,0 +1,47 @@
+﻿@model HomeSchool.Models.Student
+
+@{
+    ViewBag.Title = "Usuń ucznia z bazy";
+}
+
+<h2 style="color: white;">Usuń ucznia z bazy</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+<h4 style="color: white;">Jesteś pewny że chcesz usunąć ucznia z bazy? Tej operacji nie można cofnąć.</h4>
+<div style="color: white;">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(model => model.LastName, "Nazwisko")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.FirstName, "Imię")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.EnrollmentDate, "Data dodania")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-danger" /> |
+            @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>
