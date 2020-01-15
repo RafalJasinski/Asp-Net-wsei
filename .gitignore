@@ -1,6 +1,12 @@
 obj
-CourseSchool/bin/*
+CourseSchool/bin/*.dll
+CourseSchool/bin/*.pdb
+CourseSchool/bin/*.xml
+CourseSchool/bin/*.config
+CourseSchool/bin/pl/*
+CourseSchool/bin/roslyn/*.dll
 CourseSchool/obj/*
+packages/*
 .vs
 .git
 *.dll
